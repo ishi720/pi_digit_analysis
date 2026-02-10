@@ -43,4 +43,6 @@ julia --project=. pi_digit_analysis.jl
 9: 3023
 ```
 
-<img width="605" height="434" alt="Digit Distribution of π" src="https://github.com/user-attachments/assets/05e27eab-4985-469f-95d7-91e60b2d00d5" />
+<img width="605" height="434" alt="Digit Distribution of π" src="https://github.com/ishi720/pi_digit_analysis/blob/main/bar_chart.png" />
+
+<img width="605" height="434" alt="Digit Distribution of π" src="https://github.com/ishi720/pi_digit_analysis/blob/main/line_chart.png" />
