@@ -3,11 +3,11 @@ using Plots
 using HypothesisTests
 
 # 任意精度設定
-setprecision(BigFloat, 100010)  # 小数10万桁＋少し余裕
+setprecision(BigFloat, 100010)
 pi_big = BigFloat(π)
 
 # 小数部分を文字列として取得
-pi_str = string(pi_big)[3:end]  # "3." を除く
+pi_str = string(pi_big)[3:end]  # 整数部分を除去
 println("小数部分の長さ: ", length(pi_str))
 
 # 0～9 の出現回数をカウント
@@ -33,3 +33,23 @@ bar(string.('0':'9'), observed,
     title="Digit Distribution of π (100,000 digits)",
     xlabel="Digit", ylabel="Count",
     legend=false)
+savefig("bar_chart.png")
+
+# 可視化（折れ線グラフ：桁数 vs 累積カウント）
+n = length(pi_str)
+cumcounts = zeros(Int, n, 10)  # 各桁時点での累積カウント
+running = zeros(Int, 10)
+for i in 1:n
+    d = pi_str[i] - '0'  # 0〜9 の整数に変換
+    running[d+1] += 1
+    cumcounts[i, :] .= running
+end
+
+plot(1:n, cumcounts,
+    title="Cumulative Digit Count of π",
+    xlabel="Number of digits",
+    ylabel="Count",
+    label=reshape(string.(0:9), 1, 10),
+    legend=:topleft,
+    size=(800, 500))
+savefig("line_chart.png")
