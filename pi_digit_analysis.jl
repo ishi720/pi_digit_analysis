@@ -3,7 +3,7 @@ using Plots
 using HypothesisTests
 
 # 任意精度設定
-setprecision(BigFloat, 100010)
+setprecision(BigFloat, 100000)
 pi_big = BigFloat(π)
 
 # 小数部分を文字列として取得
