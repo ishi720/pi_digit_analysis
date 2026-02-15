@@ -81,7 +81,7 @@ println("\n2桁ペアのカイ二乗検定結果:")
 println(pair_chi_test)
 
 # 可視化（2桁ペアのヒートマップ）
-heatmap_data = reshape(pair_observed, 10, 10)  # 行:十の位, 列:一の位
+heatmap_data = reshape(pair_observed, 10, 10)'  # 行:十の位, 列:一の位
 heatmap(string.(0:9), string.(0:9), heatmap_data,
     title="2-Digit Pair Frequency of π",
     xlabel="Second digit",
