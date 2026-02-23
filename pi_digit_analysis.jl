@@ -56,7 +56,7 @@ savefig("line_chart.png")
 
 # === 2桁ペアの集計 ===
 # 隣接する2桁をスライディングウィンドウで取得 (14,41,15,59,...)
-pairs = [pi_str[i:i+1] for i in 1:length(pi_str)-1]
+pairs = [pi_str[i:i+1] for i in 1:n-1]
 
 # 00〜99 の出現回数をカウント
 pair_counts = Dict(lpad(i, 2, '0') => 0 for i in 0:99)
